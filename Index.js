@@ -60,9 +60,7 @@ async function run() {
 
     app.post("/postTask/:id", async (req, res) => {
       const body = req.body;
-
       const result = await completeCollection.insertOne(body);
-
       res.send(result);
     });
     app.get("/completeData", async (req, res) => {
@@ -70,6 +68,7 @@ async function run() {
       res.send(result);
     });
 
+    // delete task
     app.delete("/delete/:id", async (req, res) => {
       const id = req.params.id;
       const filter = { _id: ObjectId(id) };
