@@ -42,7 +42,7 @@ async function run() {
       res.send(result);
     });
 
-    // put something
+    // put
     app.put("/updateTask/:id", async (req, res) => {
       const id = req.params.id;
       const updateTask = req.body;
